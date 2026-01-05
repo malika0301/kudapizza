@@ -12,7 +12,7 @@ const HomePage = () => {
   const [setectCategory, setSelectCategory] = useState("2");
   const {data:categories} = useGet("categories");
   const { data:products } = useGet("products");
-  const {setCart} = useContext(CartContext);
+  const {setCart , cart} = useContext(CartContext);
 
 
   function addToCart(id){
@@ -21,6 +21,29 @@ const HomePage = () => {
     
     setCart((perv) =>{
       return [...perv , {...cartItem , qty:1}]
+    })
+  }
+  function increase(id){
+   setCart((prev) => {
+    return prev.map((el) => {
+      if(el.id === id){
+        return {...el , qty:el.qty + 1}
+      }else{
+        return el
+      }
+    })
+   })
+  }
+
+  function decrease(id){
+    setCart((prev) => {
+      return prev.map((el) => {
+        if (el.id === id) {
+          return { ...el, qty: el.qty - 1 }
+        } else {
+          return el
+        }
+      })
     })
   }
 
@@ -56,7 +79,7 @@ const HomePage = () => {
                   <h1 className='text-[24px] font-bold'>{el.title}</h1>
                   <div className='flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px] my-5 items-center'>
                     {products?.filter((res) => res?.categoryId == el.id).map((el) => (
-                      <ProductCard addToCart={addToCart} {...el} />
+                      <ProductCard decrease={decrease} increase={increase} addToCart={addToCart} {...el} />
                     ))}
                   </div>
                 </div>)

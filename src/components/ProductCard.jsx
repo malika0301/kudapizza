@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/ChangeCart'
 
-const ProductCard = ({ id, image, title, basePrice , addToCart }) => {
+const ProductCard = ({ id, image, title, basePrice , addToCart, increase , decrease }) => {
 
 
   const { cart } = useContext(CartContext);
@@ -15,12 +15,16 @@ const ProductCard = ({ id, image, title, basePrice , addToCart }) => {
         {
           cart.find((el) => el.id === id) ? (
             <div className='flex items-center'>
-              <button className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>-</button>
+              <button 
+              onClick={() => decrease(id)}
+               className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>-</button>
 
               <span className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-[orangered] bg-white'>
                 {cart.find((el) => el.id === id).qty}</span>
 
-              <button className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>+</button>
+              <button
+              onClick={() => increase(id) }
+              className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>+</button>
             </div>
           ) : (
             <button onClick={() => addToCart(id)} className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>Tanlash</button>
