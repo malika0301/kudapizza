@@ -20,7 +20,7 @@ const HomePage = () => {
     console.log(cartItem);
     
     setCart((perv) =>{
-      return [...perv , {...cartItem}]
+      return [...perv , {...cartItem , qty:1}]
     })
   }
 
@@ -56,7 +56,7 @@ const HomePage = () => {
                   <h1 className='text-[24px] font-bold'>{el.title}</h1>
                   <div className='flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px] my-5 items-center'>
                     {products?.filter((res) => res?.categoryId == el.id).map((el) => (
-                      <ProductCard {...el} />
+                      <ProductCard addToCart={addToCart} {...el} />
                     ))}
                   </div>
                 </div>)

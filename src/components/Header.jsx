@@ -18,7 +18,8 @@ const Header = () => {
 
         <ul className='flex gap-1'>
           <li>
-            <NavLink to={"/korzina"}> <button className='flex bg-orange-600 px-3 py-2 gap-1 text-white rounded'><img src='./img/Shopping bag.svg' alt='korzina' /><span>{cart.length} </span>₽</button></NavLink>
+            <NavLink to={"/korzina"}> <button className='flex bg-orange-600 px-3 py-2 gap-1 text-white rounded'><img src='./img/Shopping bag.svg' alt='korzina' />
+            <span>{cart.length} </span>₽</button></NavLink>
           </li>
           
           <li>
