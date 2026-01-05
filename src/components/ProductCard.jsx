@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/ChangeCart'
 
-const ProductCard = ({ id, image, title, basePrice }) => {
+const ProductCard = ({ id, image, title, basePrice , addToCart }) => {
+
 
   const { cart } = useContext(CartContext);
   return (
@@ -13,17 +14,18 @@ const ProductCard = ({ id, image, title, basePrice }) => {
       <div className='flex items-center justify-between w-full my-2'>
         {
           cart.find((el) => el.id === id) ? (
-            <div className='flex items-center'> 
+            <div className='flex items-center'>
               <button onClick={() => addToCart(id)} className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>-</button>
-              <button onClick={() => addToCart(id)} className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-[orangered] bg-white'>
-                <span></span>
-              </button>
+
+              <span className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-[orangered] bg-white'>
+                {cart.find((el) => el.id == id)}</span>
+
               <button onClick={() => addToCart(id)} className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>+</button>
             </div>
-            ) : (
+          ) : (
             <button onClick={() => addToCart(id)} className='py-[10px] px-5 cursor-pointer text-[18px] rounded-2xl text-white bg-[orangered]'>Tanlash</button>
           )}
-        <span className='text-[18px] font-bold'>$ {basePrice} </span>
+        <span className='text-[18px] font-bold'>{basePrice} so'm</span>
       </div>
     </div>
   )

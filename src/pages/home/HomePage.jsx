@@ -17,6 +17,8 @@ const HomePage = () => {
 
   function addToCart(id){
     let cartItem = products.find((el) => el.id === id);
+    console.log(cartItem);
+    
     setCart((perv) =>{
       return [...perv , {...cartItem}]
     })
