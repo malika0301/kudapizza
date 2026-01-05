@@ -12,8 +12,10 @@ const languages = {
         footer_title7: "Qo'llab quvvatlash",
         footer_title8: "Buyurtmani topish",
         footer_title9: "Aloqa",
-        footer_title10: "Moskva, Yosh Leninlar k. 99uy"
+        footer_title10: "Moskva, Yosh Leninlar k. 99uy",
 
+        korzina: "Savat",
+        korzina_b:"Savat bo'sh"
     },
     ru: {
         home: "Главный",
@@ -28,7 +30,9 @@ const languages = {
         footer_title7: "Поддержка",
         footer_title8: "Отследить заказ",
         footer_title9: "Контакты",
-        footer_title10: "Москва, ул. Юных Ленинцев, д.99"
+        footer_title10: "Москва, ул. Юных Ленинцев, д.99",
+        korzina:"Корзина",
+        korzina_b:"Корзина пуста"
     },
     eng: {
         home: "homes",
@@ -43,7 +47,9 @@ const languages = {
         footer_title7: "Support",
         footer_title8: "Track your order",
         footer_title9: "Contacts",
-        footer_title10: "Moscow, st. young Leniniv, h.99"
+        footer_title10: "Moscow, st. young Leniniv, h.99",
+        korzina:"Cart",
+        korzina_b:"The cart is empty"
     }
 }
 
