@@ -7,7 +7,7 @@ const Footer = () => {
   const {lan} = useContext(LanguageContext)
   return (
     <footer className=' bg-gray-100'>
-      <div className='container mx-auto px-15 py-10 flex justify-between gap-5 flex-wrap'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex justify-between gap-5 flex-wrap'>
         <ul className='text-[18px]'> <Link className='flex gap-1' to={"/"}><img className='w-[35px]' src='./img/Group 2.svg' alt='logo' />Kuda Pizza</Link></ul>
         <ul className='flex flex-col gap-2 text-[18px]'>
           <li className='text-[22px] font-bold'>{lan.footer_title}</li>

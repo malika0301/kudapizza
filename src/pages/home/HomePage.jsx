@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <section className='pt-[90px]'>
-      <div className='container mx-auto px-15'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         {/**Categoriyalar */}
         <div className='flex gap-5 overflow-x-auto items-center'>
           {categories?.map((el) => (

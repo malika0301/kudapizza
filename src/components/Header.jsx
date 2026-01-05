@@ -10,8 +10,12 @@ const Header = () => {
 
   return (
     <header className='fixed top-0 w-full py-5 bg-gray-100 z-10'>
-      <div className='container mx-auto px-15 flex items-center justify-between'>
-        <Link className='flex gap-1' to = {"/"}><img src='./img/Group 2.svg' alt='logo' />Kuda Pizza</Link>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between'>
+        <Link className="flex items-center gap-2 text-sm sm:text-base" to="/">
+          <img className="w-6 sm:w-8" src="./img/Group 2.svg" alt="logo" />
+          Kuda Pizza
+        </Link>
+
         <ul className='flex gap-1'>
           <li>
             <NavLink to={"/korzina"}> <button className='flex bg-orange-600 px-3 py-2 gap-1 text-white rounded'><img src='./img/Shopping bag.svg' alt='korzina' /><span>{cart.length} </span>₽</button></NavLink>
